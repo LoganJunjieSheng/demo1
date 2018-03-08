@@ -1,0 +1,9 @@
+.link {
+    text-decoration: none!important;
+    color:rgb(119, 119, 119);
+}
+
+.body {
+    width: 1200px;
+    margin: 0 auto;
+}

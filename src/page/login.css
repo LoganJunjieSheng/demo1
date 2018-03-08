@@ -1,0 +1,38 @@
+.wrap {
+    /* background-color: rebeccapurple; */
+    /* height: 900px; */
+}
+
+.card {
+    margin: 300px auto;
+    width: 500px;
+}
+
+.text {
+    margin-top: -30px;
+    position: relative;
+}
+.regist{
+    position: absolute;
+    right:16px;
+    margin-top: -40px;
+    height: 36px;
+    line-height: 36px;
+}
+.bottom {
+    margin: 20px 0;
+    position: relative;
+}
+
+.toggle {
+    display: inline-block;
+    width: 40%!important;
+}
+.forget{
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: top;
+    position: absolute;
+    right:0;
+}

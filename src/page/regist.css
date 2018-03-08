@@ -1,0 +1,9 @@
+
+.protocol{
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: top;
+    /* position: absolute; */
+    /* right:0; */
+}
