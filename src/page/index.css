@@ -1,7 +1,91 @@
-.home{
-    width: 100%;
+.slogan {
+    height: 440px;
+    margin-top: 30px;
+    position: relative;
 }
 
-.dark{
+.carousel {
+    height: 440px;
+    /* width:600px; */
+}
+
+.slo-left {
+    position: absolute;
+    left: 0;
+    width: 216px;
+    height: 100%;
+    background-color: #2B333B;
+    color: rgba(255, 255, 255, .6);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0 0 24px 0 rgba(7, 17, 27, .2);
+    padding: 10px 0 10px 10px;
+}
+
+.menuitem {
+    position: relative;
+    height: 65px;
+    line-height: 65px;
+    font-size: 16px;
+    padding: 0 6px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+}
+
+.menuitem:hover {
+    background-color: #6B7176;
+    color: #fff;
+}
+
+.menuitem-left {
+    position: absolute;
+    left: 6px;
+}
+
+.meunitem-right {
+    position: absolute;
+    right: 6px;
+}
+
+.line {
+    height: 3px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .6);
+    margin: 10px 0;
+}
+
+.slo-right {
+    position: absolute;
+    left: 216px;
+    width: 984px;
+    height: 100%;
+    background-color: #78909C;
+    overflow: hidden;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 12px 24px 0 rgba(7, 17, 27, .2);
+}
+
+.menuhover {
+    position: absolute;
+    top: 0;
+    left: 216px;
+    z-index: 10;
+    height: 444px;
+    background-color: white;
+    width: 800px;
+    opacity: 0.93;
+}
+
+.menuhover-wrap {
+    width: 648px;
+    height: 210px;
+    margin: 0 auto;
+    height: 100px;
+    /* background-color: #eee; */
+}
+
+.dark {
     background-color: #F8FAFC;
 }

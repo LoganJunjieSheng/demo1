@@ -1,9 +1,24 @@
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
 .link {
-    text-decoration: none!important;
-    color:rgb(119, 119, 119);
+    text-decoration: none !important;
+    color: rgb(119, 119, 119);
 }
 
 .body {
     width: 1200px;
     margin: 0 auto;
+    height: 100%;
+}
+
+.my-card {
+    box-shadow: 0 0 24px 0 rgba(7, 17, 27, .2);
+    border-radius: 10px;
+    margin: 20px 0;
 }

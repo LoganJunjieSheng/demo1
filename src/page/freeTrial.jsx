@@ -32,6 +32,7 @@ class PageFreeTrial extends Component {
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
+                <div><h3>ID: {this.props.match.params.id}</h3></div>
             </div>
         );
     }

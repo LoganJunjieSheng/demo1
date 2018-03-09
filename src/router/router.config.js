@@ -3,6 +3,7 @@ import PageFreeTrial from '../page/freeTrial'
 import PageLogin from '../page/login'
 import PageRegist from '../page/regist'
 import PagePersonalCenter from '../page/personalCenter'
+import PageClassList from '../page/classList'
 import PageClassInfo from '../page/classInfo'
 
 const routes=[
@@ -22,12 +23,16 @@ const routes=[
         // exact:true,
     },
     {
+        path:'/classList/:url',
+        component:PageClassList,
+    },
+    {
         path:'/classInfo',
         component:PageClassInfo,
         // exact:true,
     },
     {
-        path:'/freeTrial',
+        path:'/freeTrial/:id',
         component:PageFreeTrial,
         // exact:true,
     },

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Redirect } from 'react-router';
-import { orangeA700, indigo600 } from 'material-ui/styles/colors';
+import { orangeA700, indigo600,blueGrey400} from 'material-ui/styles/colors';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import { List, ListItem } from 'material-ui/List';
@@ -13,7 +13,7 @@ import Music from 'material-ui/svg-icons/image/music-note';
 import FontIcon from 'material-ui/FontIcon';
 import FlatButton from 'material-ui/FlatButton';
 import Avatar from 'material-ui/Avatar';
-
+    
 require('../global/global.css')
 class Nav extends Component {
     constructor(props) {
@@ -44,13 +44,13 @@ class Nav extends Component {
                     ? <Redirect to="" />
                     : <div></div>}
                 <AppBar
-                    title={<Link to='' style={{textDecoration: 'none',color:'white',}}>Kid's world</Link>}
+                    title={<Link to='' style={{textDecoration: 'none',color:'white',}}>德国游学</Link>}
                     titleStyle={{ cursor: 'pointer' }}
                     // onTitleClick={() => { this.setState({ redirect: true })}}
                     onLeftIconButtonClick={this.handleToggle}
                     iconElementRight={unlogin}
                     style={{
-                        // background: indigo600,
+                        background: blueGrey400,
                         position: 'fixed',
                         
                     }}
@@ -83,7 +83,7 @@ class Nav extends Component {
                     <div>
                         <Menu desktop={true} autoWidth={false} width={299}>
                             <Link to='' className='link'> <MenuItem primaryText="首页" leftIcon={<Home />} onClick={this.handleClose} /></Link>
-                            <Link to='freeTrial' className='link'> <MenuItem primaryText="免费试听" leftIcon={<Home />} onClick={this.handleClose} /></Link>
+                            <Link to='freeTrial/junjie' className='link'> <MenuItem primaryText="免费试听" leftIcon={<Home />} onClick={this.handleClose} /></Link>
                             <div>
                                 <MenuItem
                                     primaryText="媒体授课"
