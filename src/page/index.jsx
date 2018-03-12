@@ -47,7 +47,7 @@ class PageIndex extends Component {
     renderMenuHover = () => {
         let city = (<div >
             <PageHeader><small><FlatButton label={<span style={{ fontSize: '30px', color: blueGrey400 }}>游学城市</span>} primary={true} style={{ height: ' 44px' }} /></small></PageHeader>
-            <Link to='classList/&city=柏林&age=null&theme=null'><FlatButton label={<span style={{ fontSize: '20px', color: blueGrey400 }}>柏林</span>} primary={true} style={{ margin: ' 3px' }} /></Link>
+            <Link to='classList'><FlatButton label={<span style={{ fontSize: '20px', color: blueGrey400 }}>柏林</span>} primary={true} style={{ margin: ' 3px' }} /></Link>
             <FlatButton label={<span style={{ fontSize: '20px', color: blueGrey400 }}>汉堡</span>} primary={true} style={{ margin: ' 3px' }} />
             <FlatButton label={<span style={{ fontSize: '20px', color: blueGrey400 }}>科隆</span>} primary={true} style={{ margin: ' 3px' }} />
             <FlatButton label={<span style={{ fontSize: '20px', color: blueGrey400 }}>德累斯顿</span>} primary={true} style={{ margin: ' 3px' }} />

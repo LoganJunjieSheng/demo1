@@ -27,11 +27,12 @@
 }
 
 .class-info:hover {
-    box-shadow: 0 0 290px 0 rgba(7, 17, 27, .2);
+    box-shadow: 0 0 50px 0 rgba(7, 17, 27, .2);
 }
 
 .class-info-left {
     position: absolute;
+
     left: 30px;
     top: 30px;
 }

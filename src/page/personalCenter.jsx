@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PageHeader, small, Carousel,Glyphicon } from 'react-bootstrap';
+import { PageHeader, small, Carousel, Glyphicon } from 'react-bootstrap';
 import MyCard from '../components/myCard'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ActionHome from 'material-ui/svg-icons/action/home';
@@ -22,7 +22,7 @@ class PagePersonalCenter extends Component {
                         <PageHeader>
                             <small>
                                 <Link className='link' to=''>
-                                    热门课程 
+                                    热门课程
                                 </Link>
                             </small>
                         </PageHeader>

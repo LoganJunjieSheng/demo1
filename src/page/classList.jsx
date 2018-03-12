@@ -121,26 +121,26 @@ class PageClassList extends Component {
                                 {this.state.unSelectChip.age.map(this.renderChipUnSelect, this)}
                             </div>
                         </div>
-
-                        <div className='my-card class-info'>
-                            <div className='class-info-left'>
-                                <img height={140} src={require("../static/class1.jpg")} />
-                            </div>
-                            <div className='class-info-right'>
-                                <div className='class-info-right-title'>
-                                    德国足球训练营
-                                    <FlatButton label={<span style={{ fontSize: '20px', color: deepOrangeA700 }}>体育教育</span>} primary={true} style={{ margin: ' 3px' }} />
-                                    <FlatButton label={<span style={{ fontSize: '20px', color: deepOrangeA700 }}>亲子</span>} primary={true} style={{ margin: ' 3px' }} />
-                                    <FlatButton label={<span style={{ fontSize: '20px', color: deepOrangeA700 }}>汉堡</span>} primary={true} style={{ margin: ' 3px' }} />
+                        <Link to='/classInfo '>
+                            <div className='my-card class-info'>
+                                <div className='class-info-left'>
+                                    <img height={140} width={248} src={require("../static/classInfo1.png")} />
                                 </div>
-                                <div className='class-info-right-body' >行程：14-16天</div>
-                                <div className='class-info-right-body' >适合年龄：12-19天</div>
-                                <div className='class-info-right-body' >截止时间：2018-10-1</div>
+                                <div className='class-info-right'>
+                                    <div className='class-info-right-title'>
+                                        德国多特蒙德足球训练营
+                                        <FlatButton label={<span style={{ fontSize: '20px', color: deepOrangeA700 }}>体育</span>} primary={true} style={{ margin: ' 3px' }} />
+                                        <FlatButton label={<span style={{ fontSize: '20px', color: deepOrangeA700 }}>足球</span>} primary={true} style={{ margin: ' 3px' }} />
+                                    </div>
+                                    <div className='class-info-right-body' >行程：14-16天</div>
+                                    <div className='class-info-right-body' >适合年龄：12-19天</div>
+                                    <div className='class-info-right-body' >截止时间：2018-10-1</div>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                         <div className='my-card class-info'>
                             <div className='class-info-left'>
-                                <img height={140} src={require("../static/class2.jpg")} />
+                                <img height={140} width={248} src={require("../static/class2.jpg")} />
                             </div>
                             <div className='class-info-right'>
                                 <div className='class-info-right-title'>

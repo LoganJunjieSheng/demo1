@@ -6,42 +6,46 @@ import PagePersonalCenter from '../page/personalCenter'
 import PageClassList from '../page/classList'
 import PageClassInfo from '../page/classInfo'
 
-const routes=[
-    {
-        path:'/login',
-        component:PageLogin,
+const routes = [{
+        path: '/login',
+        component: PageLogin,
         // exact:true,
     },
     {
-        path:'/regist',
-        component:PageRegist,
+        path: '/regist',
+        component: PageRegist,
         // exact:true,
     },
     {
-        path:'/personalCenter',
-        component:PagePersonalCenter,
+        path: '/personalCenter',
+        component: PagePersonalCenter,
         // exact:true,
     },
     {
-        path:'/classList/:url',
-        component:PageClassList,
+        path: '/classInfo',
+        component: PageClassInfo,
+        exact:true,
     },
     {
-        path:'/classInfo',
-        component:PageClassInfo,
+        path: '/classList',
+        component: PageClassList,
+        routes: [{
+            path: "/classInfo",
+            component: PageClassInfo
+        }, ]
+    },
+
+    {
+        path: '/freeTrial/:id',
+        component: PageFreeTrial,
         // exact:true,
     },
     {
-        path:'/freeTrial/:id',
-        component:PageFreeTrial,
-        // exact:true,
+        path: '',
+        component: PageIndex,
+        exact:true,
     },
-    {
-        path:'',
-        component:PageIndex,
-        // exact:true,
-    },
-   
+
 ];
 
 export default routes;
