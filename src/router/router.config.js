@@ -5,6 +5,8 @@ import PageRegist from '../page/regist'
 import PagePersonalCenter from '../page/personalCenter'
 import PageClassList from '../page/classList'
 import PageClassInfo from '../page/classInfo'
+import PagePlan from '../page/plan'
+import PageBigData from '../page/bigData'
 
 const routes = [{
         path: '/login',
@@ -24,7 +26,7 @@ const routes = [{
     {
         path: '/classInfo',
         component: PageClassInfo,
-        exact:true,
+        exact: true,
     },
     {
         path: '/classList',
@@ -41,9 +43,19 @@ const routes = [{
         // exact:true,
     },
     {
+        path: '/plan',
+        component: PagePlan,
+        // exact:true,
+    },
+    {
+        path: '/bigData',
+        component: PageBigData,
+        // exact:true,
+    },
+    {
         path: '',
         component: PageIndex,
-        exact:true,
+        exact: true,
     },
 
 ];

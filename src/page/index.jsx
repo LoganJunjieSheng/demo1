@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PageHeader, small, Carousel } from 'react-bootstrap';
+import { PageHeader, small, Carousel, Media } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import MyCard from '../components/myCard'
 import DropDownMenu from 'material-ui/DropDownMenu';
@@ -12,7 +12,7 @@ import {
     red500,
     blueGrey400,
 } from 'material-ui/styles/colors';
-
+import PageBigData from './bigData'
 require('../global/global.css')
 require('./index.css')
 class PageIndex extends Component {
@@ -84,11 +84,11 @@ class PageIndex extends Component {
         }
     }
     render() {
-        const card1 = require('../static/card1.jpg');
-        const card2 = require('../static/card2.jpg');
-        const card3 = require('../static/card3.jpg');
-        const card4 = require('../static/card4.jpg');
-        const card5 = require('../static/card5.jpg');
+        const card1 = require('../static/class1.jpg');
+        const card2 = require('../static/class2.jpg');
+        const card3 = require('../static/class3.jpg');
+        const card4 = require('../static/class4.jpg');
+        const card5 = require('../static/class5.jpg');
 
         return (
             <div className='body'>
@@ -116,15 +116,20 @@ class PageIndex extends Component {
                             <div className='meunitem-right'>></div>
                         </div>
                         <div className='line'></div>
+                        <Link to='/plan' className='link'>
+                            <div className='menuitem' >
+                                <div className='menuitem-left' >游学一键规划</div>
+                            </div>
+                        </Link>
+                        <Link to='/bigData' className='link'>
+                            <div className='menuitem' >
+                                <div className='menuitem-left'>游学大数据</div>
+                            </div>
+                        </Link>
                         <div className='menuitem' >
-                            <div className='menuitem-left'>游学一键规划</div>
+                            <div className='menuitem-left'>游学直播</div>
                         </div>
-                        <div className='menuitem' >
-                            <div className='menuitem-left'>游学大数据</div>
-                        </div>
-                        <div className='menuitem' >
-                            <div className='menuitem-left'>游学定制</div>
-                        </div>
+
                     </div>
                     <div className='slo-right'>
                         <div>
@@ -167,31 +172,53 @@ class PageIndex extends Component {
 
                 <div className='dark' >
                     <div className='body'>
-                        <PageHeader><small>教学模式</small></PageHeader>
+                        <PageHeader><small>热门课程推荐</small></PageHeader>
                         <div>
-                            12344
+                            <MyCard img={card1} title='国际对外德语语言中心' difficulty='高中生' num='303' price='3000' />
+                            <MyCard img={card2} title='专属生态拓展项目' difficulty='亲子' num='183' price='6000' />
+                            <MyCard img={card3} title='小音乐家的探索营' difficulty='小学生' num='56' price='5000' />
+                            <MyCard img={card4} title='百年贵族私校微留学' difficulty='初中生' num='91' price='9000' />
+                            <MyCard img={card5} title='人工智能探索' difficulty='大学生' num='123' price='5000' />
                         </div>
                     </div>
                 </div>
-                <div className='' >
-                    <div className='body'>
-                        <PageHeader><small>德国师资</small></PageHeader>
-                        <div>
-                            12344
-                        </div>
-                    </div>
-                </div>
+
+                <PageBigData />
+
                 <div className='dark' >
                     <div className='body'>
-                        <PageHeader><small>课程体系</small></PageHeader>
-                        <div>
-                            12344
-                        </div>
+                        <PageHeader><small>教育理念</small></PageHeader>
+                        <Media style={{margin:'0 0 50px 0'}}>
+                            <Media.Left>
+                                <img width={395} height={284} src={require('../static/index4.jpg')} alt="Image" />
+                            </Media.Left>
+                            <Media.Body>
+                                <p style={{ fontSize: '25px' }}>
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    12年来，希舸德国游学坚持打造高品质游学项目，坚持希舸“诚信负责，真情关爱，好学精进，至高行远”的核心价值观，并将“安全、快乐、成长”作为游学项目运营的核心要素，让学生们在行走中的世界课堂开阔视野，体验精彩人生，启迪游学收获，帮助学生成就更好的自己。
+                                </p>
+                            </Media.Body>
+                        </Media>
+                        <Media style={{margin:'0 0 50px 0'}}>
+                            <Media.Body>
+                                <p style={{ fontSize: '25px' }}>
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    在12 年的游学征途中，希舸德国游学在中国大陆本土建立起了51 个服务网络，同时将服务范围延伸至海外，在美国洛杉矶及英国伦敦设立了海外独立自主营地，为更多的学生提供优质的游学教育服务。
+                                </p>
+                                <p style={{ fontSize: '25px' }}>
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    新东方国际游学与诸多全球高端优质教育资源建立了战略合作关系，包括世界权威英语联盟English UK 认证、美国RusticPathways 公益服务战略合作、联合国青年大会代表团授权招募、哈佛大学领导力夏训营官方合作、康奈尔大学国际辩论赛战略伙伴等，携手世界顶尖教育资源为学生打造行走中的世界课堂。
+                                </p>
+                            </Media.Body>
+                            <Media.Right>
+                                <img width={542} height={284} src={require('../static/index5.jpg')} alt="Image" />
+                            </Media.Right>
+                        </Media>
                     </div>
                 </div>
-                <div className='' >
+                {/* <div className='' >
                     <div className='body'>
-                        <PageHeader><small>公开课</small></PageHeader>
+                        <PageHeader><small>产品业务</small></PageHeader>
                         <div>
                             12344
                         </div>
@@ -204,7 +231,7 @@ class PageIndex extends Component {
                             12344
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         );
     }

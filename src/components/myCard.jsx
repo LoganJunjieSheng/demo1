@@ -41,6 +41,7 @@ class MyCard extends Component {
                 borderRadius: '13px',
                 height: '130px',
                 width: '226px',
+                marginTop:'-10px',
             },
             title: {
                 padding: '0 10px',

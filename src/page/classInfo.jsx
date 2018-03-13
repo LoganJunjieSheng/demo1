@@ -20,7 +20,9 @@ import {
     Stepper,
     StepLabel,
     StepContent,
-  } from 'material-ui/Stepper';
+} from 'material-ui/Stepper';
+import TextField from 'material-ui/TextField';
+import Checkbox from 'material-ui/Checkbox';
 require('../global/global.css')
 require('./classInfo.css')
 class PageClassInfo extends Component {
@@ -29,6 +31,8 @@ class PageClassInfo extends Component {
         this.state = {
             value: 1,
             open: false,
+            finished: false,
+            stepIndex: 0,
         };
     }
     handleChange = (event, index, value) => this.setState({ value });
@@ -39,6 +43,116 @@ class PageClassInfo extends Component {
     handleClose = () => {
         this.setState({ open: false });
     };
+    handleNext = () => {
+        const { stepIndex } = this.state;
+        this.setState({
+            stepIndex: stepIndex + 1,
+            finished: stepIndex >= 2,
+        });
+    };
+
+    handlePrev = () => {
+        const { stepIndex } = this.state;
+        if (stepIndex > 0) {
+            this.setState({ stepIndex: stepIndex - 1 });
+        }
+    };
+    renderStepActions(step) {
+        return (
+            <div style={{ margin: '12px 0' }}>
+                <RaisedButton
+                    label={this.state.stepIndex === 4 ? '关闭' : '下一步'}
+                    disableTouchRipple={true}
+                    disableFocusRipple={true}
+                    primary={true}
+                    onClick={this.handleNext}
+                    style={{ marginRight: 12 }}
+                />
+                {step > 0 && (
+                    <FlatButton
+                        label="上一步"
+                        disabled={this.state.stepIndex === 0}
+                        disableTouchRipple={true}
+                        disableFocusRipple={true}
+                        onClick={this.handlePrev}
+                    />
+                )}
+            </div>
+        );
+    }
+    getStepContent(stepIndex) {
+        switch (stepIndex) {
+            case 0:
+                return (<div className='body'>
+                    <h3>学员信息</h3>
+                    <TextField
+                        // hintText="Message Field"
+                        floatingLabelText="姓名"
+                    />
+                    <TextField
+                        // hintText="Message Field"
+                        floatingLabelText="手机号"
+                    />
+                    <TextField
+                        // hintText="Message Field"
+                        floatingLabelText="学校/单位"
+                    />
+                    <TextField
+                        // hintText="Message Field"
+                        floatingLabelText="身份证号"
+                    />
+                    <h3>监护人信息</h3>
+                    <TextField
+                        // hintText="Message Field"
+                        floatingLabelText="姓名"
+                    />
+                    <TextField
+                        // hintText="Message Field"
+                        floatingLabelText="手机号"
+                    />
+                    <TextField
+                        // hintText="Message Field"
+                        floatingLabelText="身份证号"
+                    />
+                </div>);
+            case 1:
+                return (<div className='body'>
+                    <div className='protocol'>
+                        <p>尊敬的学员:</p>
+                    </div>
+                    <Checkbox
+                        label=" 已经阅读，并同意条款。"
+                    />
+                </div>);
+            case 2:
+                return (<div className='body'>
+                    <h3>温馨提示</h3>
+                    <p>你所预约的线路，全国正在同步销售，名额有限，我们将以客户支付订金先后时间为准。 为确保您能顺利报名该团，建议您尽快完成订单支付， 采用在线支付预交订金，锁定名额。 请等待顾问与您联系。</p>
+                    <h3>详细信息</h3>
+                    <p><strong>德国多特蒙德足球协会霍姆布鲁赫</strong></p>
+                    <div>出发日期：2018-06-27</div>
+                    <div>返回日期：2018-07-10</div>
+                    <h3>合计：<strong style={{ color: orangeA700 }}>3000.00元</strong></h3>
+                </div>);
+            case 3:
+                return (<div className='body clearfix '>
+                    <div style={{margin:'0 a'}}>
+                        <div className='zfb'>
+                            <h3>支付宝</h3>
+                            <div>
+                                <img height={200} width={200} src={require('../static/QR1.jpg')} />
+                            </div>
+                        </div>
+                        <div className='wx'>
+                            <h3>微信</h3>
+                            <img height={200} width={200} src={require('../static/QR1.jpg')} />
+                        </div>
+                    </div>
+                </div>);
+            default:
+                return '支付成功';
+        }
+    }
 
     renderDialog = () => {
         const customContentStyle = {
@@ -47,15 +161,15 @@ class PageClassInfo extends Component {
         };
         const actions = [
             <FlatButton
-                label="Cancel"
+                label="关闭"
                 primary={true}
                 onClick={this.handleClose}
             />,
-            <FlatButton
-                label="Submit"
-                primary={true}
-                onClick={this.handleClose}
-            />,
+            // <FlatButton
+            //     label="Submit"
+            //     primary={true}
+            //     onClick={this.handleClose}
+            // />,
         ];
         return (<Dialog
             title="开始报名"
@@ -64,7 +178,26 @@ class PageClassInfo extends Component {
             contentStyle={customContentStyle}
             open={this.state.open}
         >
-            This dialog spans the entire width of the screen.
+            <Stepper
+                activeStep={this.state.stepIndex}
+            // orientation="vertical"
+            >
+                <Step>
+                    <StepLabel>出行人信息</StepLabel>
+                </Step>
+                <Step>
+                    <StepLabel>阅读协议</StepLabel>
+                </Step>
+                <Step>
+                    <StepLabel>订单明细</StepLabel>
+                </Step>
+                <Step>
+                    <StepLabel>支付</StepLabel>
+                </Step>
+            </Stepper>
+            {this.getStepContent(this.state.stepIndex)}
+            <div className='body'> {this.renderStepActions(this.state.stepIndex)}</div>
+
         </Dialog>)
     }
     render() {
@@ -118,8 +251,8 @@ class PageClassInfo extends Component {
                                     </SelectField>
                                 </div>
                                 <div style={{ margin: '20px auto' }}>
-                                    <RaisedButton onClick={this.handleOpen} label={<span style={{ fontSize: '30px' }} >立即购买</span>} style={{ margin: '0 5px 0 0 ' }} buttonStyle={{ height: '72px', width: '160px' }} backgroundColor={blueGrey400} labelColor={grey50} keyboardFocused={true} />
-                                    <RaisedButton label={<span style={{ fontSize: '30px' }}>免费预订</span>} backgroundColor={grey50} labelColor={blueGrey400} buttonStyle={{ height: '72px', width: '160px' }} />
+                                    <RaisedButton onClick={this.handleOpen} label={<span style={{ fontSize: '30px' }} >立即购买</span>} style={{ margin: '0 5px 0 0 ' }} buttonStyle={{ height: '72px', width: '320px' }} backgroundColor={blueGrey400} labelColor={grey50} keyboardFocused={true} />
+                                    {/* <RaisedButton label={<span style={{ fontSize: '30px' }}>免费预订</span>} backgroundColor={grey50} labelColor={blueGrey400} buttonStyle={{ height: '72px', width: '160px' }} /> */}
                                 </div>
                             </div>
                         </div>

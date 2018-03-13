@@ -16,3 +16,12 @@
     color: #777;
     font-size: 18px;
 }
+.protocol{
+    height: 300px;
+    overflow: auto;
+}
+.zfb,.wx{
+    float: left;
+    width: 500px;
+
+}

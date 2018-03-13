@@ -41,6 +41,7 @@
 .menuitem-left {
     position: absolute;
     left: 6px;
+    color: rgba(255, 255, 255, .6); 
 }
 
 .meunitem-right {
@@ -85,4 +86,3 @@
     height: 100px;
     /* background-color: #eee; */
 }
-
