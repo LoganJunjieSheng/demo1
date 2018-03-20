@@ -136,7 +136,7 @@ class PageClassInfo extends Component {
                 </div>);
             case 3:
                 return (<div className='body clearfix '>
-                    <div style={{margin:'0 a'}}>
+                    <div style={{ margin: '0 a' }}>
                         <div className='zfb'>
                             <h3>支付宝</h3>
                             <div>

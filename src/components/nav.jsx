@@ -44,7 +44,7 @@ class Nav extends Component {
                     ? <Redirect to="" />
                     : <div></div>}
                 <AppBar
-                    title={<Link to='' style={{textDecoration: 'none',color:'white',}}>德国游学</Link>}
+                    title={<Link to='' style={{textDecoration: 'none',color:'white',}}>希舸德国游学</Link>}
                     titleStyle={{ cursor: 'pointer' }}
                     // onTitleClick={() => { this.setState({ redirect: true })}}
                     onLeftIconButtonClick={this.handleToggle}

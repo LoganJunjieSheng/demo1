@@ -187,7 +187,7 @@ class PageIndex extends Component {
 
                 <div className='dark' >
                     <div className='body'>
-                        <PageHeader><small>教育理念</small></PageHeader>
+                        <PageHeader><small>关于我们</small></PageHeader>
                         <Media style={{margin:'0 0 50px 0'}}>
                             <Media.Left>
                                 <img width={395} height={284} src={require('../static/index4.jpg')} alt="Image" />
